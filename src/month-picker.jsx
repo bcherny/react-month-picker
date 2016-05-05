@@ -319,7 +319,7 @@ let MonthPicker = React.createClass({
           this.setState({
               values: values
           })
-          this.props.onChange(year, month, idx)
+          this.props.onChange(year, month, idx, e)
         }
     }
 
