@@ -86,6 +86,8 @@ let MonthPicker = React.createClass({
         , onShow: React.PropTypes.func
         , onDismiss: React.PropTypes.func
         , onClickAway: React.PropTypes.func
+        , onClickNextYear: React.PropTypes.func
+        , onClickPrevYear: React.PropTypes.func
         , theme: React.PropTypes.string
     }
 
@@ -328,12 +330,14 @@ let MonthPicker = React.createClass({
         if (this.state.yearIndexes[idx] > 0) {
             this.setYear(idx, -1)
         }
+        this.props.onClickPrevYear(this.state.labelYears[idx], e)
     }
     , goNextYear(e) {
         let idx = parseInt(this.getDID(e), 10)
         if (this.state.yearIndexes[idx] < (this.state.years.length - 1)) {
             this.setYear(idx, 1)
         }
+        this.props.onClickNextYear(this.state.labelYears[idx], e)
     }
     , setYear(idx, step) {
         let yearIndex = (this.state.yearIndexes[idx] += step)
