@@ -263,7 +263,7 @@ let MonthPicker = React.createClass({
         }
 
         return (
-            <div className={["month-picker", this.props.className].join(' ')}>
+            <div className={["month-picker", this.props.className, this.state.showed ? "show" : ""].join(' ')}>
                 {this.props.children}
                 <div className={["container", "table", this.props.className, (this.state.showed ? "show" : '')].join(' ')}>
                     <Tappable className="overlay" onTap={this._handleOverlayTouchTap} />
